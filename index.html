@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=Dw8YU4QvQ_3N-QdS542kDpnT53NDhLzc_oPLO1JgbmKPpg4tCfTBtt64vgp8mmKyhz7wdfr5zQv2_9mRhg-ZYgIgCUWhjb1o0uMiQHk-qfCotN9lF_pa1QU8M4zahKUcvpo__u-rqUvqq40ucLIUFd_YdvTV795w2pgQxBUJmyZyr_-e_kEvnEhpiZzUFSI9g8jpgULfMiUC7tMDA_0x9iUTGwx0r99L9hJL4l2tXqGgwJ_YOgvfE0Eo38S-IabY5j1YTNwLAweR8M_0Wvr9l_lofBaVKuDjQSTT8RO51jvxStqFM9ifv3tM7sHgUWAQ2Er6-PznLO-4h0LxSMmXYr5b1B79CyoN0yyIqPsITxMd5oJN69DpJGv3E5N8q6wbSmsWH0iP6bIhcIxd3hHSP2dDr4tiyLa5hyHakgn8D7GPgINe0ySVaNoMYNv07Byu6G9W6--K-pT7KXnL3pGdZP2zAJk8oRrNpIL9hGl30Zp0hzRYTCkZS_3JEbrsueq6ukla9-sgshk4gp1xcZTYRiTKF0S7crYBVlqnxT2RAsA" charset="UTF-8"></script><script type='text/javascript' nonce='z42oUO/np+UWiXIGK2nZwQ==' src='https://contribution.usercontent.google.com/Deri5Z60pvTU1LCiOcQpxz5kVP-V2sFyCYBR4USf1Eu7dGMu48lDwG5klt7P5Vbai39aki1LtMTyMT6izkR9I5f-RCbvaNaxTH-r8ewbZrS8ohQajQMMpBqfTtRXHptFJ1bBiWxSZvOSL1fi2mI1HBNRBTHjNOE5qPIbvs3B3VleEioRXKUhbSCuxZWqkSZUCPjm-xz2quQDLX5CKJFMQEFmGU9QySYw4Vp5J8uRMn-h0t0WO9TZfcYnlXMfmI1yAT2O51bdYV3is4_FbyQF8lEVv4tWsoUTh3RlqJRFZSiksxaEogwV2vx20MSZaZG_wfpWqeEuOD8-lTwUxR9z4wYxtna44Oyve1W2BzwD-eptwPUMLjCbb6wWIKT7kt3dzeLSsYNCgtv6NnvdSK5uqTYAah90X9ke2NctmPFzUSqpWg3P9V8ODb-DWLo6NFh0aifHbN3ug-tgdYPr6E1jF9_aQvX3qOpMYatQRya5Gqf6z-IjHCL0p6_31mul1Mphjc-75hKw4NJR9mejHbPK_UA3CvuzQsGT_f7ywhas_OvYvjI9P4w0hqB4GG_GVUOCwcrfJJ31NmrxX5nt9mDzWGTjU2pbYsy1ananAohIt64f75fOqxpJSz80SWnSh6ZBAfEoKpZeaJI2i3yaQECCdB_vnwoXrXS5Z4BlOW-OVljYsuO9lnqFbyF7-LkyMieMHvaSKRk1xoZOdH28pNI9mdIObo5rOUmT8ekBhCkndqBGlvoJeP8R3W266TfWegExpM-1POkqadWb3MlbowpKsElKgfirAgwJBMN05MhFv7Rcx6IOJcqxz3H2nzG9JAx2KAsAk-9swtz9x-uLxWbMXA-1Sh5mSH2J0HgcOVmW5s47TpdhIf06SiF8z-d3Wq4cG1SQAZyqjs9cHSHfQxO71XgLz5XND6ww3A4WTn9qac8UH_LGFY2WEYAezecX'></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استبيان الامتحان الوطني للطب البشري 2026 - الإصدار السحابي</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Supabase JS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Google Arabic Fonts (Cairo & Tajawal) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&amp;family=Tajawal:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        tajawal: ['Tajawal', 'sans-serif'],
+                    },
+                    colors: {
+                        medical: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #0f766e 100%);
+            min-height: 100vh;
+            color: #f8fafc;
+        }
+
+        /* Glassmorphism Styles */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(56, 189, 248, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.25);
+        }
+
+        .glass-input {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            color: #ffffff;
+        }
+
+        .glass-input:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+            outline: none;
+        }
+
+        /* Custom Checkbox Styling */
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 22px;
+            height: 22px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .custom-checkbox:checked {
+            background: #0ea5e9;
+            border-color: #38bdf8;
+        }
+
+        .custom-checkbox:checked::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Animated background mesh circles */
+        .bg-blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(90px);
+            z-index: -1;
+            opacity: 0.5;
+            animation: float 10s infinite alternate;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0px, 0px) scale(1); }
+            100% { transform: translate(30px, -40px) scale(1.1); }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(56, 189, 248, 0.4);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="p-3 sm:p-6 md:p-10 relative selection:bg-sky-500 selection:text-white">
+
+    <!-- Background Animated Glow Blobs -->
+    <div class="bg-blob w-96 h-96 bg-cyan-600 top-10 right-10"></div>
+    <div class="bg-blob w-96 h-96 bg-indigo-700 bottom-10 left-10 animation-delay-2000"></div>
+    <div class="bg-blob w-80 h-80 bg-teal-600 top-1/2 left-1/3"></div>
+
+    <div class="max-w-4xl mx-auto space-y-8">
+
+        <!-- Top Header & Timer Card -->
+        <header class="glass-panel rounded-3xl p-6 sm:p-8 relative overflow-hidden text-center sm:text-right border-t border-white/30">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="space-y-2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-300 text-xs sm:text-sm font-semibold">
+                        <i class="fa-solid fa-user-md"></i>
+                        <span>الدفعة 2026 • خريجو الطب البشري (متصل بالسحابة ☁️)</span>
+                    </div>
+                    <h1 class="text-2xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-l from-white via-sky-100 to-sky-300">
+                        استبيان الامتحان الوطني للطب البشري
+                    </h1>
+                    <p class="text-slate-300 text-xs sm:text-base max-w-xl">
+                        ساعدنا بتحديد أسلوب دراستك ونقاط تركيزك لنبني لك تجربة مراجعة واختبارات تفاعلية مخصصة 100%.
+                    </p>
+                </div>
+
+                <!-- Countdown Timer Display -->
+                <div class="w-full md:w-auto glass-card rounded-2xl p-4 border border-sky-500/30 bg-slate-900/40 text-center">
+                    <div class="text-xs text-sky-300 font-bold mb-2 flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-clock animate-pulse"></i>
+                        <span>الوقت المتبقي للامتحان الوطني</span>
+                    </div>
+                    <div id="countdown" class="grid grid-cols-4 gap-2 text-center dir-ltr">
+                        <div class="bg-slate-800/80 p-2 rounded-lg border border-white/10">
+                            <span id="days" class="block text-lg sm:text-2xl font-black text-sky-400">00</span>
+                            <span class="text-[10px] text-slate-400 font-sans">أيام</span>
+                        </div>
+                        <div class="bg-slate-800/80 p-2 rounded-lg border border-white/10">
+                            <span id="hours" class="block text-lg sm:text-2xl font-black text-emerald-400">00</span>
+                            <span class="text-[10px] text-slate-400 font-sans">ساعات</span>
+                        </div>
+                        <div class="bg-slate-800/80 p-2 rounded-lg border border-white/10">
+                            <span id="minutes" class="block text-lg sm:text-2xl font-black text-amber-400">00</span>
+                            <span class="text-[10px] text-slate-400 font-sans">دقائق</span>
+                        </div>
+                        <div class="bg-slate-800/80 p-2 rounded-lg border border-white/10">
+                            <span id="seconds" class="block text-lg sm:text-2xl font-black text-rose-400">00</span>
+                            <span class="text-[10px] text-slate-400 font-sans">ثواني</span>
+                        </div>
+                    </div>
+                    <div class="text-[11px] text-slate-400 mt-2 font-medium">
+                        الموعد المتوقع: <span class="text-slate-200">20 ديسمبر 2026</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Form Container -->
+        <form id="surveyForm" onsubmit="event.preventDefault();" class="space-y-6">
+
+            <!-- Doctor Name Input -->
+            <div class="glass-panel rounded-2xl p-6 transition-all duration-300">
+                <label for="doctorName" class="block text-base sm:text-lg font-bold text-sky-200 mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-user-doctor text-sky-400"></i>
+                    الاسم الكريم للزميل/الزميلة:
+                </label>
+                <input type="text" id="doctorName" name="doctorName" placeholder="دكتورة/دكتور ..." class="glass-input w-full px-4 py-3 rounded-xl text-lg placeholder-slate-400 transition duration-200" oninput="saveProgress()">
+            </div>
+
+            <!-- Question 1: Preferred Learning Style -->
+            <div class="glass-panel rounded-2xl p-6">
+                <h3 class="text-base sm:text-lg font-bold text-sky-200 mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-brain text-sky-400"></i>
+                    1. ما هو أسلوب التعلم والمراجعة المفضّل لديك؟ <span class="text-xs text-slate-400 font-normal">(يمكن اختيار أكثر من إجابة)</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
+                    <label class="glass-card p-4 rounded-xl flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="q1_style" value="بصري (مخططات، صور تشخيصية، خرائط ذهن)" class="custom-checkbox" onchange="saveProgress()">
+                        <div class="text-sm sm:text-base">
+                            <span class="font-semibold block text-slate-100">👁️ بصري وشعاعي</span>
+                            <span class="text-xs text-slate-400">اعتماد المخططات، الخرائط الذهنية، والصور الشعاعية</span>
+                        </div>
+                    </label>
+
+                    <label class="glass-card p-4 rounded-xl flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="q1_style" value="قرائي / كتابي (ملخصات وملاحظات مكثفة)" class="custom-checkbox" onchange="saveProgress()">
+                        <div class="text-sm sm:text-base">
+                            <span class="font-semibold block text-slate-100">📖 قرائي وتلخيصي</span>
+                            <span class="text-xs text-slate-400">قراءة النصوص، النقاط المفتاحية، وتدوين الملاحظات</span>
+                        </div>
+                    </label>
+
+                    <label class="glass-card p-4 rounded-xl flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="q1_style" value="تفاعلي / حالات سريرية ومحاكاة" class="custom-checkbox" onchange="saveProgress()">
+                        <div class="text-sm sm:text-base">
+                            <span class="font-semibold block text-slate-100">🩺 تفاعلي وحالات سريرية</span>
+                            <span class="text-xs text-slate-400">حل سيناريوهات المرضى والمحاكاة التشخيصية</span>
+                        </div>
+                    </label>
+
+                    <label class="glass-card p-4 rounded-xl flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="q1_style" value="سمعي / شرح مباشر وتسجيلات" class="custom-checkbox" onchange="saveProgress()">
+                        <div class="text-sm sm:text-base">
+                            <span class="font-semibold block text-slate-100">🎧 سمعي وشروحات</span>
+                            <span class="text-xs text-slate-400">الاستماع للمناقشات الصوتية والشروح المباشرة</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 2: Peak Energy & Concentration -->
+            <div class="glass-panel rounded-2xl p-6">
+                <h3 class="text-base sm:text-lg font-bold text-sky-200 mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-bolt text-amber-400"></i>
+                    2. متى تكون فترة ذروة تركيزك وانتاجيتك اليومية؟
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4">
+                    <label class="glass-card p-4 rounded-xl flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="q2_time" value="صباحي مبكر" class="custom-checkbox" onchange="saveProgress()">
+                        <div>
+                            <span class="font-semibold block text-slate-100">🌅 صباحي مبكر</span>
+                            <span class="text-xs text-slate-400">تركيز عالٍ في الساعات الأولى</span>
+                        </div>
+                    </label>
+
+                    <label class="glass-card p-4 rounded-xl flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="q2_time" value="مسائي / ليلي" class="custom-checkbox" onchange="saveProgress()">
+                        <div>
+                            <span class="font-semibold block text-slate-100">🌙 مسائي / سهر ليلي</span>
+                            <span class="text-xs text-slate-400">هدوء الليل وتركيز متواصل</span>
+                        </div>
+                    </label>
+
+                    <label class="glass-card p-4 rounded-xl flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="q2_time" value="جلسات متقطعة (بومودورو)" class="custom-checkbox" onchange="saveProgress()">
+                        <div>
+                            <span class="font-semibold block text-slate-100">⏱️ متقطع (بومودورو)</span>
+                            <span class="text-xs text-slate-400">25 دقيقة دراسة / 5 فترات راحة</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 3: Challenging Subject Blocks -->
+            <div class="glass-panel rounded-2xl p-6">
+                <h3 class="text-base sm:text-lg font-bold text-sky-200 mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-notes-medical text-rose-400"></i>
+                    3. ما هي الأقسام والكتل التي تجدها أكثر صعوبة وتطلب تركيزاً مضاعفاً؟
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+                    <label class="glass-card p-4 rounded-xl flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="q3_blocks" value="الداخلية (قلبية، صدرية، كلوية، هضمية، عصبية)" class="custom-checkbox" onchange="saveProgress()">
+                        <span class="font-semibold text-slate-100">🫀 الباطنية بمختلف فروعها</span>
+                    </label>
+
+                    <label class="glass-card p-4 rounded-xl flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="q3_blocks" value="الجراحات (عامة، عظمية، بولية، أوعية)" class="custom-checkbox" onchange="saveProgress()">
+                        <span class="font-semibold text-slate-100">🔪 الجراحة العامة والتخصصية</span>
+                    </label>
+
+                    <label class="glass-card p-4 rounded-xl flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="q3_blocks" value="طب الأطفال والتوليد والنسائية" class="custom-checkbox" onchange="saveProgress()">
+                        <span class="font-semibold text-slate-100">👶 الأطفال والتوليد والنسائية</span>
+                    </label>
+
+                    <label class="glass-card p-4 rounded-xl flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="q3_blocks" value="الاختصاصات الصغرى (عينية، أذنية، جلدية)" class="custom-checkbox" onchange="saveProgress()">
+                        <span class="font-semibold text-slate-100">👁️ الاختصاصات الصغرى</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 4: Motivation Style -->
+            <div class="glass-panel rounded-2xl p-6">
+                <h3 class="text-base sm:text-lg font-bold text-sky-200 mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-fire text-orange-400"></i>
+                    4. ما هو نمط التحدي والتحفيز الذي يساعدك على الاستمرار؟
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4">
+                    <label class="glass-card p-4 rounded-xl flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="q4_motivation" value="تحدي قاسي وضغط إيجابي" class="custom-checkbox" onchange="saveProgress()">
+                        <div>
+                            <span class="font-semibold block text-slate-100">🔥 تحدي قاسي وبند ناري</span>
+                            <span class="text-xs text-slate-400">ضغط مكثف ومواعيد حازمة</span>
+                        </div>
+                    </label>
+
+                    <label class="glass-card p-4 rounded-xl flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="q4_motivation" value="تشجيع هادئ وتدريجي" class="custom-checkbox" onchange="saveProgress()">
+                        <div>
+                            <span class="font-semibold block text-slate-100">🌱 تشجيع متدرج وهادئ</span>
+                            <span class="text-xs text-slate-400">خطوات صغيرة وبناء ثقة منظم</span>
+                        </div>
+                    </label>
+
+                    <label class="glass-card p-4 rounded-xl flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="q4_motivation" value="تحديات تنافسية ولوحة شرف" class="custom-checkbox" onchange="saveProgress()">
+                        <div>
+                            <span class="font-semibold block text-slate-100">🏆 تنافسي ولوحة شرف</span>
+                            <span class="text-xs text-slate-400">مقارنة نقاط وتحفيز جماعي</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 5: Interactive File Content Focus -->
+            <div class="glass-panel rounded-2xl p-6">
+                <h3 class="text-base sm:text-lg font-bold text-sky-200 mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-laptop-code text-teal-400"></i>
+                    5. ماذا تحب أن تركز عليه في ملفات الاختبار التفاعلية (HTML) القادمة؟
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4">
+                    <label class="glass-card p-4 rounded-xl flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="q5_focus" value="سيناريوهات سريرية معقدة ومطولة" class="custom-checkbox" onchange="saveProgress()">
+                        <span class="font-semibold text-slate-100">🚑 سيناريوهات وحالات طويلة</span>
+                    </label>
+
+                    <label class="glass-card p-4 rounded-xl flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="q5_focus" value="أسئلة دورات وسريعة (Flashcards)" class="custom-checkbox" onchange="saveProgress()">
+                        <span class="font-semibold text-slate-100">⚡ دورات خاطفة وملاحظات سريعة</span>
+                    </label>
+
+                    <label class="glass-card p-4 rounded-xl flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="q5_focus" value="مزيج متدرج بـ 4 مستويات صعوبة" class="custom-checkbox" onchange="saveProgress()">
+                        <span class="font-semibold text-slate-100">📊 مزيج متدرج بـ 4 مستويات</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Notes or Custom Remarks -->
+            <div class="glass-panel rounded-2xl p-6">
+                <label for="customNotes" class="block text-base sm:text-lg font-bold text-sky-200 mb-2 flex items-center gap-2">
+                    <i class="fa-regular fa-comment-dots text-purple-400"></i>
+                    ملاحظات أو اقتراحات أُخرى تحب إضافتها:
+                </label>
+                <textarea id="customNotes" name="customNotes" rows="3" placeholder="اكتب أي موضوع أو نصيحة تحب أن نراعيها أثناء إعداد الأسئلة والمراجعة..." class="glass-input w-full p-4 rounded-xl text-sm sm:text-base placeholder-slate-400" oninput="saveProgress()"></textarea>
+            </div>
+
+            <!-- Action Toolbar Buttons -->
+            <div class="glass-panel rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-sky-500/20">
+                <div id="saveStatus" class="text-xs sm:text-sm text-emerald-400 flex items-center gap-2 font-medium">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <span>جاهز للحفظ السحابي والمحلي...</span>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+                    <!-- Cloud Save Button (Day 2 Integration) -->
+                    <button type="button" onclick="submitSurveyToCloud()" class="flex-1 sm:flex-initial px-4 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-emerald-600 hover:from-sky-400 hover:to-emerald-500 text-white font-bold text-sm shadow-lg shadow-sky-900/40 transition duration-200 flex items-center justify-center gap-2 active:scale-95">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <span>حفظ في قاعدة البيانات ☁️</span>
+                    </button>
+
+                    <!-- Copy to Clipboard Button -->
+                    <button type="button" onclick="copyReportToClipboard()" class="flex-1 sm:flex-initial px-4 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm shadow-lg shadow-emerald-900/40 transition duration-200 flex items-center justify-center gap-2 active:scale-95">
+                        <i class="fa-regular fa-copy"></i>
+                        <span>نسخ التقرير</span>
+                    </button>
+
+                    <!-- Export HTML Report Button -->
+                    <button type="button" onclick="downloadHTMLReport()" class="flex-1 sm:flex-initial px-4 py-3 rounded-xl bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white font-bold text-sm shadow-lg shadow-sky-900/40 transition duration-200 flex items-center justify-center gap-2 active:scale-95">
+                        <i class="fa-solid fa-file-arrow-down"></i>
+                        <span>تنزيل HTML</span>
+                    </button>
+
+                    <!-- Reset Button -->
+                    <button type="button" onclick="resetForm()" class="px-3 py-3 rounded-xl bg-slate-800/80 hover:bg-rose-900/50 text-slate-300 hover:text-rose-300 border border-white/10 text-sm transition duration-200 flex items-center justify-center gap-1">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </button>
+                </div>
+            </div>
+
+        </form>
+
+        <!-- Footer -->
+        <footer class="text-center py-4 text-xs text-slate-400">
+            <p>مشروع كوتش الطبي 2026 • دعم أطباء المستقبل في سوريا 🩺🚀</p>
+        </footer>
+
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 left-5 sm:left-auto sm:w-96 glass-panel border border-sky-400/50 bg-slate-900/90 p-4 rounded-2xl shadow-2xl transition-all duration-300 transform translate-y-32 opacity-0 flex items-center gap-3 z-50">
+        <div id="toastIcon" class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-xl shrink-0">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div class="flex-1">
+            <h4 id="toastTitle" class="text-sm font-bold text-white">إشعار</h4>
+            <p id="toastMessage" class="text-xs text-slate-300">تمت العملية بنجاح</p>
+        </div>
+    </div>
+
+    <script>
+        // ==========================================
+        // SUPABASE CONFIGURATION (DAY 2 INTEGRATION)
+        // ==========================================
+        // ضع هنا رابط مشروعك ومفتاح الـ Anon Key الخاص بك من Supabase:
+        const SUPABASE_URL = 'https://YOUR_PROJECT_ID.supabase.co';
+        const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY_HERE';
+
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        // Target Date: December 20, 2026
+        const examTargetDate = new Date('2026-12-20T00:00:00');
+
+        function updateCountdown() {
+            const now = new Date();
+            const difference = examTargetDate - now;
+
+            if (difference <= 0) {
+                document.getElementById('countdown').innerHTML = '<div class="col-span-4 text-emerald-400 font-bold py-2">حان موعد الامتحان الوطني! بالتوفيق يا أبطال 🎓</div>';
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Local Storage Auto-Save Logic
+        const STORAGE_KEY = 'national_exam_survey_2026';
+
+        function saveProgress() {
+            const form = document.getElementById('surveyForm');
+            const data = {
+                doctorName: form.doctorName.value,
+                customNotes: form.customNotes.value,
+                q1_style: getCheckedValues('q1_style'),
+                q2_time: getCheckedValues('q2_time'),
+                q3_blocks: getCheckedValues('q3_blocks'),
+                q4_motivation: getCheckedValues('q4_motivation'),
+                q5_focus: getCheckedValues('q5_focus'),
+                timestamp: new Date().toLocaleString('ar-SA')
+            };
+
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+            
+            const statusEl = document.getElementById('saveStatus');
+            statusEl.innerHTML = '<i class="fa-solid fa-circle-check text-emerald-400"></i><span class="text-emerald-300">تم الحفظ محلياً ✓</span>';
+        }
+
+        // ==========================================
+        // CLOUD SAVE FUNCTION (SUPABASE INTEGRATION)
+        // ==========================================
+        async function submitSurveyToCloud() {
+            const form = document.getElementById('surveyForm');
+            const doctorName = form.doctorName.value.trim();
+            const customNotes = form.customNotes.value.trim();
+
+            if (!doctorName) {
+                showToast('تنبيه هام', 'يرجى إدخال اسم الطبيب الكريم أولاً!', 'fa-triangle-exclamation', 'bg-amber-500/20 text-amber-400');
+                form.doctorName.focus();
+                return;
+            }
+
+            // Check if placeholder keys are still present
+            if (SUPABASE_URL.includes('YOUR_PROJECT_ID')) {
+                showToast('تنبيه تكويني', 'يرجى وضع روابط Supabase الفعلية في كود JavaScript بالأسفل.', 'fa-triangle-exclamation', 'bg-amber-500/20 text-amber-400');
+                return;
+            }
+
+            const surveyData = {
+                doctor_name: doctorName,
+                learning_styles: getCheckedValues('q1_style'),
+                peak_time: getCheckedValues('q2_time'),
+                challenging_blocks: getCheckedValues('q3_blocks'),
+                motivation_style: getCheckedValues('q4_motivation'),
+                focus_topics: getCheckedValues('q5_focus'),
+                custom_notes: customNotes
+            };
+
+            showToast('جاري الحفظ...', 'يتم إرسال بياناتك إلى سحابة Supabase الآمنة...', 'fa-spinner fa-spin', 'bg-sky-500/20 text-sky-400');
+
+            const { data, error } = await supabase
+                .from('surveys')
+                .insert([surveyData]);
+
+            if (error) {
+                console.error('Error inserting data:', error);
+                showToast('خطأ في الحفظ السحابي', error.message, 'fa-xmark', 'bg-rose-500/20 text-rose-400');
+            } else {
+                showToast('تم الحفظ بنجاح! ☁️', 'تم تخزين استبيانك في قاعدة البيانات السحابية بنجاح.', 'fa-cloud-arrow-down', 'bg-emerald-500/20 text-emerald-400');
+                const statusEl = document.getElementById('saveStatus');
+                statusEl.innerHTML = '<i class="fa-solid fa-cloud text-sky-400"></i><span class="text-sky-300">محفوظ سحابياً في Supabase ✓</span>';
+            }
+        }
+
+        function getCheckedValues(name) {
+            const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
+            return Array.from(checkboxes).map(cb => cb.value);
+        }
+
+        function loadSavedData() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (!saved) return;
+
+            try {
+                const data = JSON.parse(saved);
+                if (data.doctorName) document.getElementById('doctorName').value = data.doctorName;
+                if (data.customNotes) document.getElementById('customNotes').value = data.customNotes;
+
+                setCheckedValues('q1_style', data.q1_style);
+                setCheckedValues('q2_time', data.q2_time);
+                setCheckedValues('q3_blocks', data.q3_blocks);
+                setCheckedValues('q4_motivation', data.q4_motivation);
+                setCheckedValues('q5_focus', data.q5_focus);
+            } catch (e) {
+                console.error("Error loading saved data", e);
+            }
+        }
+
+        function setCheckedValues(name, valuesArray) {
+            if (!Array.isArray(valuesArray)) return;
+            const checkboxes = document.querySelectorAll(`input[name="${name}"]`);
+            checkboxes.forEach(cb => {
+                cb.checked = valuesArray.includes(cb.value);
+            });
+        }
+
+        // Show Custom Toast Notification
+        function showToast(title, message, iconClass = 'fa-check', iconBg = 'bg-sky-500/20 text-sky-400') {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastTitle').innerText = title;
+            document.getElementById('toastMessage').innerText = message;
+            
+            const iconEl = document.getElementById('toastIcon');
+            iconEl.className = `w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0 ${iconBg}`;
+            iconEl.innerHTML = `<i class="fa-solid ${iconClass}"></i>`;
+
+            toast.classList.remove('translate-y-32', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-32', 'opacity-0');
+            }, 4000);
+        }
+
+        // Copy Text Summary to Clipboard
+        function copyReportToClipboard() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (!saved) {
+                showToast('تنبيه', 'يرجى تعبئة الاستبيان أولاً', 'fa-triangle-exclamation', 'bg-amber-500/20 text-amber-400');
+                return;
+            }
+
+            const data = JSON.parse(saved);
+            const docName = data.doctorName ? data.doctorName : 'غير محدد';
+
+            const formattedText = `📋 *استبيان استعداد الامتحان الوطني للطب البشري 2026*
+----------------------------------------
+👨‍⚕️ *اسم الطبيب/ة:* ${docName}
+
+🧠 *أسلوب التعلم المفضّل:* 
+${data.q1_style.length ? data.q1_style.map(s => '  • ' + s).join('
+') : '  لم يحدد'}
+
+⚡ *ذروة التركيز والوقت:* 
+${data.q2_time.length ? data.q2_time.map(t => '  • ' + t).join('
+') : '  لم يحدد'}
+
+🫀 *الكتل والأقسام الأكثر صعوبة:* 
+${data.q3_blocks.length ? data.q3_blocks.map(b => '  • ' + b).join('
+') : '  لم يحدد'}
+
+🔥 *نمط التحفيز والتحدي:* 
+${data.q4_motivation.length ? data.q4_motivation.map(m => '  • ' + m).join('
+') : '  لم يحدد'}
+
+💻 *تركيز الملفات التفاعلية القادمة:* 
+${data.q5_focus.length ? data.q5_focus.map(f => '  • ' + f).join('
+') : '  لم يحدد'}
+
+💬 *ملاحظات إضافية:* 
+${data.customNotes ? data.customNotes : 'لا يوجد'}
+----------------------------------------
+⏰ *تاريخ الحفظ:* ${data.timestamp || 'الآن'}`;
+
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = formattedText;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showToast('تم النسخ بنجاح! 📋', 'تم نسخ ملخص الاستبيان للحافظة.');
+            } catch (err) {
+                showToast('خطأ في النسخ', 'تعذر النسخ التلقائي.', 'fa-xmark', 'bg-rose-500/20 text-rose-400');
+            } finally {
+                document.body.removeChild(tempTextArea);
+            }
+        }
+
+        // Export Clean HTML Summary Report
+        function downloadHTMLReport() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (!saved) {
+                showToast('تنبيه', 'يرجى تعبئة الاستبيان أولاً قبل التنزيل', 'fa-triangle-exclamation', 'bg-amber-500/20 text-amber-400');
+                return;
+            }
+
+            const data = JSON.parse(saved);
+            const docName = data.doctorName || 'طبيب مستقبلي';
+
+            const reportHTML = `<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تقرير الاستبيان - ${docName}</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f172a; color: #f8fafc; padding: 40px; direction: rtl; }
+        .card { background: #1e293b; border: 1px solid #334155; padding: 25px; border-radius: 16px; max-width: 700px; margin: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        h1 { color: #38bdf8; font-size: 24px; border-bottom: 2px solid #334155; padding-bottom: 12px; margin-top: 0; }
+        .info-group { margin-bottom: 20px; }
+        .label { font-weight: bold; color: #7dd3fc; margin-bottom: 6px; display: block; }
+        ul { background: #0f172a; border-radius: 8px; padding: 12px 28px; margin: 6px 0; }
+        li { margin-bottom: 6px; color: #e2e8f0; }
+        .footer { text-align: center; margin-top: 25px; font-size: 12px; color: #94a3b8; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>📑 تقرير استعداد الامتحان الوطني للطب البشري 2026</h1>
+        <div class="info-group">
+            <span class="label">👨‍⚕️ اسم الطبيب/ة:</span>
+            <div style="font-size: 18px; color: #fff;">${docName}</div>
+        </div>
+        <div class="info-group">
+            <span class="label">🧠 أسلوب التعلم المفضّل:</span>
+            <ul>${data.q1_style.map(s => `<li>${s}</li>`).join('') || '<li>لم يتم التحديد</li>'}</ul>
+        </div>
+        <div class="info-group">
+            <span class="label">⚡ وقت ذروة التركيز:</span>
+            <ul>${data.q2_time.map(t => `<li>${t}</li>`).join('') || '<li>لم يتم التحديد</li>'}</ul>
+        </div>
+        <div class="info-group">
+            <span class="label">🫀 الأقسام الأكثر صعوبة:</span>
+            <ul>${data.q3_blocks.map(b => `<li>${b}</li>`).join('') || '<li>لم يتم التحديد</li>'}</ul>
+        </div>
+        <div class="info-group">
+            <span class="label">🔥 نمط التحفيز والمتابعة:</span>
+            <ul>${data.q4_motivation.map(m => `<li>${m}</li>`).join('') || '<li>لم يتم التحديد</li>'}</ul>
+        </div>
+        <div class="info-group">
+            <span class="label">💻 تركيز ملفات الأسئلة التفاعلية:</span>
+            <ul>${data.q5_focus.map(f => `<li>${f}</li>`).join('') || '<li>لم يتم التحديد</li>'}</ul>
+        </div>
+        ${data.customNotes ? `<div class="info-group"><span class="label">💬 ملاحظات إضافية:</span><p style="background:#0f172a; padding:10px; border-radius:8px;">${data.customNotes}</p></div>` : ''}
+        <div class="footer">تاريخ التصدير: ${data.timestamp || new Date().toLocaleString('ar-SA')}</div>
+    </div>
+</body>
+</html>`;
+
+            const blob = new Blob([reportHTML], { type: 'text/html;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `تقرير_الامتحان_الوطني_${docName.replace(/\s+/g, '_')}.html`;
+            link.click();
+
+            showToast('تم التنزيل! 💾', 'تم حفظ التقرير بصيغة HTML تفاعلية على جهازك.');
+        }
+
+        // Reset Form Values
+        function resetForm() {
+            if (confirm("هل أنت تأكد من رغبتك في مسح الإجابات المحفوظة؟")) {
+                localStorage.removeItem(STORAGE_KEY);
+                document.getElementById('surveyForm').reset();
+                showToast('تم المسح', 'تمت إزالة الإجابات بنجاح.', 'fa-rotate-right', 'bg-slate-500/20 text-slate-300');
+            }
+        }
+
+        // Initialize on page load
+        window.onload = function() {
+            loadSavedData();
+        };
+    </script>
+</body>
+</html>
