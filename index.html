@@ -8,14 +8,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Supabase JS Client CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <!-- Google Arabic Fonts (Cairo & Tajawal) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     
-    <!-- Supabase JS Library CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
     <script>
         tailwind.config = {
             theme: {
@@ -126,16 +125,9 @@
             100% { transform: translate(30px, -40px) scale(1.1); }
         }
 
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: rgba(15, 23, 42, 0.6);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(56, 189, 248, 0.4);
-            border-radius: 4px;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.6); }
+        ::-webkit-scrollbar-thumb { background: rgba(56, 189, 248, 0.4); border-radius: 4px; }
     </style>
 </head>
 <body class="p-3 sm:p-6 md:p-10 relative selection:bg-sky-500 selection:text-white">
@@ -162,7 +154,6 @@
                     </p>
                 </div>
 
-                <!-- Countdown Timer Display -->
                 <div class="w-full md:w-auto glass-card rounded-2xl p-4 border border-sky-500/30 bg-slate-900/40 text-center">
                     <div class="text-xs text-sky-300 font-bold mb-2 flex items-center justify-center gap-2">
                         <i class="fa-regular fa-clock animate-pulse"></i>
@@ -384,36 +375,35 @@
             <div class="glass-panel rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-sky-500/20">
                 <div id="saveStatus" class="text-xs sm:text-sm text-emerald-400 flex items-center gap-2 font-medium">
                     <i class="fa-solid fa-cloud-arrow-up"></i>
-                    <span>جاهز للحفظ السحابي التلقائي...</span>
+                    <span>جاهز لإرسال الإجابات لقاعدة البيانات...</span>
                 </div>
 
                 <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
-                    <!-- Supabase Direct Cloud Save Button -->
-                    <button type="button" onclick="manualSyncToSupabase()" 
-                            class="flex-1 sm:flex-initial px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold text-sm shadow-lg shadow-cyan-900/40 transition duration-200 flex items-center justify-center gap-2 active:scale-95">
-                        <i class="fa-solid fa-cloud-arrow-up"></i>
-                        <span>حفظ سحابياً في القاعدة</span>
+                    <!-- Submit to Supabase Database Button -->
+                    <button type="button" onclick="submitToSupabase()" 
+                            class="flex-1 sm:flex-initial px-5 py-3 rounded-xl bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 text-white font-bold text-sm shadow-lg shadow-sky-900/40 transition duration-200 flex items-center justify-center gap-2 active:scale-95">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>إرسال وحفظ بالمنصة</span>
                     </button>
 
                     <!-- Copy to Clipboard Button -->
                     <button type="button" onclick="copyReportToClipboard()" 
-                            class="flex-1 sm:flex-initial px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm shadow-lg shadow-emerald-900/40 transition duration-200 flex items-center justify-center gap-2 active:scale-95">
+                            class="px-4 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm shadow-lg shadow-emerald-900/40 transition duration-200 flex items-center justify-center gap-2 active:scale-95" title="نسخ للحافظة">
                         <i class="fa-regular fa-copy"></i>
-                        <span>نسخ التقرير للحافظة</span>
+                        <span class="hidden sm:inline">نسخ</span>
                     </button>
 
                     <!-- Export HTML Report Button -->
                     <button type="button" onclick="downloadHTMLReport()" 
-                            class="flex-1 sm:flex-initial px-5 py-3 rounded-xl bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white font-bold text-sm shadow-lg shadow-sky-900/40 transition duration-200 flex items-center justify-center gap-2 active:scale-95">
+                            class="px-4 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-sm shadow-lg shadow-blue-900/40 transition duration-200 flex items-center justify-center gap-2 active:scale-95" title="تنزيل كملف">
                         <i class="fa-solid fa-file-arrow-down"></i>
-                        <span>تنزيل تقرير (HTML)</span>
+                        <span class="hidden sm:inline">تنزيل</span>
                     </button>
 
                     <!-- Reset Button -->
                     <button type="button" onclick="resetForm()" 
-                            class="px-4 py-3 rounded-xl bg-slate-800/80 hover:bg-rose-900/50 text-slate-300 hover:text-rose-300 border border-white/10 text-sm transition duration-200 flex items-center justify-center gap-1">
+                            class="px-4 py-3 rounded-xl bg-slate-800/80 hover:bg-rose-900/50 text-slate-300 hover:text-rose-300 border border-white/10 text-sm transition duration-200 flex items-center justify-center gap-1" title="مسح الاستبيان">
                         <i class="fa-solid fa-rotate-right"></i>
-                        <span class="hidden sm:inline">مسح</span>
                     </button>
                 </div>
             </div>
@@ -439,10 +429,14 @@
     </div>
 
     <script>
-        // Supabase Client Initialization
-        const SUPABASE_URL = 'https://dltnazuhrgwsdqjhugqy.supabase.co';
+        // ==========================================
+        // 🔑 إعدادات ربط Supabase (استبدل القيم بالخاصة بك)
+        // ==========================================
+        const SUPABASE_URL = 'https://dltnazuhrgwsdqjhugqy.supabase.co/rest/v1/';
         const SUPABASE_ANON_KEY = 'sb_publishable_h7c8upHxDwBPSEkBHO7ZcQ_prtMhnTf';
-        const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        
+        // تهيئة العميل
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
         // Target Date: December 20, 2026
         const examTargetDate = new Date('2026-12-20T00:00:00');
@@ -470,9 +464,8 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // Local Storage & Supabase Auto-Save Logic
+        // Local Storage Auto-Save Logic (محلياً مؤقتاً)
         const STORAGE_KEY = 'national_exam_survey_2026';
-        let saveTimeout = null;
 
         function saveProgress() {
             const form = document.getElementById('surveyForm');
@@ -488,73 +481,6 @@
             };
 
             localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-            
-            const statusEl = document.getElementById('saveStatus');
-            statusEl.innerHTML = '<i class="fa-solid fa-circle-check text-emerald-400"></i><span class="text-emerald-300">تم الحفظ محلياً ✓</span>';
-
-            // Automatic background sync with debounce
-            clearTimeout(saveTimeout);
-            saveTimeout = setTimeout(() => {
-                syncToSupabase(data, false);
-            }, 2000);
-        }
-
-        async function syncToSupabase(data, showNotification = false) {
-            try {
-                const statusEl = document.getElementById('saveStatus');
-                statusEl.innerHTML = '<i class="fa-solid fa-spinner animate-spin text-cyan-400"></i><span class="text-cyan-300">جاري الحفظ في سحابة Supabase...</span>';
-
-                const { error } = await supabaseClient
-                    .from('survey_responses')
-                    .insert([
-                        {
-                            doctor_name: data.doctorName || 'طبيب مجهول',
-                            learning_style: data.q1_style.join(', '),
-                            peak_time: data.q2_time.join(', '),
-                            difficult_blocks: data.q3_blocks.join(', '),
-                            motivation_style: data.q4_motivation.join(', '),
-                            preferred_focus: data.q5_focus.join(', '),
-                            custom_notes: data.customNotes || ''
-                        }
-                    ]);
-
-                if (error) throw error;
-
-                statusEl.innerHTML = '<i class="fa-solid fa-cloud-arrow-up text-emerald-400"></i><span class="text-emerald-300">تم حفظ النتائج سحابياً بنجاح ☁️✓</span>';
-                if (showNotification) {
-                    showToast('تم الحفظ سحابياً بنجاح! ☁️', 'تم إرسال إجابات الاستبيان إلى قاعدة بيانات Supabase بشكل دائم.');
-                }
-            } catch (err) {
-                console.error('خطأ في الاتصال بقاعدة البيانات السحابية:', err.message);
-                const statusEl = document.getElementById('saveStatus');
-                statusEl.innerHTML = '<i class="fa-solid fa-triangle-exclamation text-amber-400"></i><span class="text-amber-300">محفوظ محلياً (تحقق من اتصال الإنترنت)</span>';
-                if (showNotification) {
-                    showToast('فشل الحفظ السحابي', 'تأكد من اتصالك بالإنترنت أو إعدادات الجدول.', 'fa-xmark', 'bg-rose-500/20 text-rose-400');
-                }
-            }
-        }
-
-        // Manual Trigger for Supabase Cloud Save Button
-        function manualSyncToSupabase() {
-            const form = document.getElementById('surveyForm');
-            const data = {
-                doctorName: form.doctorName.value,
-                customNotes: form.customNotes.value,
-                q1_style: getCheckedValues('q1_style'),
-                q2_time: getCheckedValues('q2_time'),
-                q3_blocks: getCheckedValues('q3_blocks'),
-                q4_motivation: getCheckedValues('q4_motivation'),
-                q5_focus: getCheckedValues('q5_focus'),
-                timestamp: new Date().toLocaleString('ar-SA')
-            };
-
-            if (!data.doctorName.trim()) {
-                showToast('تنبيه هام', 'يرجى إدخال اسم الطبيب/ة قبل الحفظ السحابي.', 'fa-triangle-exclamation', 'bg-amber-500/20 text-amber-400');
-                form.doctorName.focus();
-                return;
-            }
-
-            syncToSupabase(data, true);
         }
 
         function getCheckedValues(name) {
@@ -589,6 +515,52 @@
             });
         }
 
+        // ==========================================
+        // 🚀 دالة إرسال وحفظ البيانات في Supabase
+        // ==========================================
+        async function submitToSupabase() {
+            const form = document.getElementById('surveyForm');
+            const doctorName = form.doctorName.value.trim();
+
+            if (!doctorName) {
+                showToast('تنبيه هام', 'يرجى إدخال اسم الزميل أو الزميلة قبل إرسال الاستبيان', 'fa-triangle-exclamation', 'bg-amber-500/20 text-amber-400');
+                return;
+            }
+
+            const statusEl = document.getElementById('saveStatus');
+            statusEl.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-sky-400"></i><span class="text-sky-300">جاري إرسال البيانات لقاعدة البيانات...</span>';
+
+            // تجميع البيانات بالمسميات المطابقة لأعمدة الجدول في Supabase
+            const surveyPayload = {
+                doctor_name: doctorName,
+                q1_style: getCheckedValues('q1_style'),
+                q2_time: getCheckedValues('q2_time'),
+                q3_blocks: getCheckedValues('q3_blocks'),
+                q4_motivation: getCheckedValues('q4_motivation'),
+                q5_focus: getCheckedValues('q5_focus'),
+                custom_notes: form.customNotes.value || ''
+            };
+
+            try {
+                const { data, error } = await supabaseClient
+                    .from('survey_responses') // اسم الجدول في Supabase
+                    .insert([surveyPayload]);
+
+                if (error) {
+                    throw error;
+                }
+
+                showToast('تم الحفظ بنجاح! 🚀', 'تم إرسال إجاباتك بنجاح إلى قاعدة بيانات المنصة.');
+                statusEl.innerHTML = '<i class="fa-solid fa-circle-check text-emerald-400"></i><span class="text-emerald-300">تم الحفظ في المنصة بنجاح ✓</span>';
+
+            } catch (err) {
+                console.error('Supabase Error:', err.message);
+                showToast('خطأ في الإرسال', 'تعذر الحفظ في قاعدة البيانات: ' + err.message, 'fa-xmark', 'bg-rose-500/20 text-rose-400');
+                statusEl.innerHTML = '<i class="fa-solid fa-triangle-exclamation text-rose-400"></i><span class="text-rose-300">فشل الحفظ (تأكد من إعدادات الجدول)</span>';
+            }
+        }
+
+        // Show Custom Toast Notification
         function showToast(title, message, iconClass = 'fa-check', iconBg = 'bg-sky-500/20 text-sky-400') {
             const toast = document.getElementById('toast');
             document.getElementById('toastTitle').innerText = title;
@@ -604,42 +576,37 @@
             setTimeout(() => {
                 toast.classList.remove('translate-y-0', 'opacity-100');
                 toast.classList.add('translate-y-32', 'opacity-0');
-            }, 3500);
+            }, 4000);
         }
 
+        // Copy Text Summary to Clipboard
         function copyReportToClipboard() {
-            const saved = localStorage.getItem(STORAGE_KEY);
-            if (!saved) {
-                showToast('تنبيه', 'يرجى تعبئة الاستبيان أولاً', 'fa-triangle-exclamation', 'bg-amber-500/20 text-amber-400');
-                return;
-            }
-
-            const data = JSON.parse(saved);
-            const docName = data.doctorName ? data.doctorName : 'غير محدد';
+            const form = document.getElementById('surveyForm');
+            const docName = form.doctorName.value.trim() || 'غير محدد';
 
             const formattedText = `📋 *استبيان استعداد الامتحان الوطني للطب البشري 2026*
 ----------------------------------------
 👨‍⚕️ *اسم الطبيب/ة:* ${docName}
 
 🧠 *أسلوب التعلم المفضّل:* 
-${data.q1_style.length ? data.q1_style.map(s => '  • ' + s).join('\n') : '  لم يحدد'}
+${getCheckedValues('q1_style').length ? getCheckedValues('q1_style').map(s => '  • ' + s).join('\n') : '  لم يحدد'}
 
 ⚡ *ذروة التركيز والوقت:* 
-${data.q2_time.length ? data.q2_time.map(t => '  • ' + t).join('\n') : '  لم يحدد'}
+${getCheckedValues('q2_time').length ? getCheckedValues('q2_time').map(t => '  • ' + t).join('\n') : '  لم يحدد'}
 
 🫀 *الكتل والأقسام الأكثر صعوبة:* 
-${data.q3_blocks.length ? data.q3_blocks.map(b => '  • ' + b).join('\n') : '  لم يحدد'}
+${getCheckedValues('q3_blocks').length ? getCheckedValues('q3_blocks').map(b => '  • ' + b).join('\n') : '  لم يحدد'}
 
 🔥 *نمط التحفيز والتحدي:* 
-${data.q4_motivation.length ? data.q4_motivation.map(m => '  • ' + m).join('\n') : '  لم يحدد'}
+${getCheckedValues('q4_motivation').length ? getCheckedValues('q4_motivation').map(m => '  • ' + m).join('\n') : '  لم يحدد'}
 
 💻 *تركيز الملفات التفاعلية القادمة:* 
-${data.q5_focus.length ? data.q5_focus.map(f => '  • ' + f).join('\n') : '  لم يحدد'}
+${getCheckedValues('q5_focus').length ? getCheckedValues('q5_focus').map(f => '  • ' + f).join('\n') : '  لم يحدد'}
 
 💬 *ملاحظات إضافية:* 
-${data.customNotes ? data.customNotes : 'لا يوجد'}
+${form.customNotes.value ? form.customNotes.value : 'لا يوجد'}
 ----------------------------------------
-⏰ *تاريخ الحفظ:* ${data.timestamp || 'الآن'}`;
+⏰ *تاريخ الحفظ:* ${new Date().toLocaleString('ar-SA')}`;
 
             const tempTextArea = document.createElement('textarea');
             tempTextArea.value = formattedText;
@@ -648,23 +615,18 @@ ${data.customNotes ? data.customNotes : 'لا يوجد'}
             
             try {
                 document.execCommand('copy');
-                showToast('تم النسخ بنجاح! 📋', 'تم نسخ ملخص الاستبيان للحافظة، يمكنك لصقه الآن كـ Context Injection لتوليد حالتك السريرية الأولى.');
+                showToast('تم النسخ بنجاح! 📋', 'تم نسخ ملخص الاستبيان للحافظة.');
             } catch (err) {
-                showToast('خطأ في النسخ', 'تعذر النسخ التلقائي، حاول مرة أخرى.', 'fa-xmark', 'bg-rose-500/20 text-rose-400');
+                showToast('خطأ في النسخ', 'تعذر النسخ التلقائي.', 'fa-xmark', 'bg-rose-500/20 text-rose-400');
             } finally {
                 document.body.removeChild(tempTextArea);
             }
         }
 
+        // Export Clean HTML Summary Report
         function downloadHTMLReport() {
-            const saved = localStorage.getItem(STORAGE_KEY);
-            if (!saved) {
-                showToast('تنبيه', 'يرجى تعبئة الاستبيان أولاً قبل التنزيل', 'fa-triangle-exclamation', 'bg-amber-500/20 text-amber-400');
-                return;
-            }
-
-            const data = JSON.parse(saved);
-            const docName = data.doctorName || 'طبيب مستقبلي';
+            const form = document.getElementById('surveyForm');
+            const docName = form.doctorName.value.trim() || 'طبيب مستقبلي';
 
             const reportHTML = `<!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -691,26 +653,26 @@ ${data.customNotes ? data.customNotes : 'لا يوجد'}
         </div>
         <div class="info-group">
             <span class="label">🧠 أسلوب التعلم المفضّل:</span>
-            <ul>${data.q1_style.map(s => `<li>${s}</li>`).join('') || '<li>لم يتم التحديد</li>'}</ul>
+            <ul>${getCheckedValues('q1_style').map(s => `<li>${s}</li>`).join('') || '<li>لم يتم التحديد</li>'}</ul>
         </div>
         <div class="info-group">
             <span class="label">⚡ وقت ذروة التركيز:</span>
-            <ul>${data.q2_time.map(t => `<li>${t}</li>`).join('') || '<li>لم يتم التحديد</li>'}</ul>
+            <ul>${getCheckedValues('q2_time').map(t => `<li>${t}</li>`).join('') || '<li>لم يتم التحديد</li>'}</ul>
         </div>
         <div class="info-group">
             <span class="label">🫀 الأقسام الأكثر صعوبة:</span>
-            <ul>${data.q3_blocks.map(b => `<li>${b}</li>`).join('') || '<li>لم يتم التحديد</li>'}</ul>
+            <ul>${getCheckedValues('q3_blocks').map(b => `<li>${b}</li>`).join('') || '<li>لم يتم التحديد</li>'}</ul>
         </div>
         <div class="info-group">
             <span class="label">🔥 نمط التحفيز والمتابعة:</span>
-            <ul>${data.q4_motivation.map(m => `<li>${m}</li>`).join('') || '<li>لم يتم التحديد</li>'}</ul>
+            <ul>${getCheckedValues('q4_motivation').map(m => `<li>${m}</li>`).join('') || '<li>لم يتم التحديد</li>'}</ul>
         </div>
         <div class="info-group">
             <span class="label">💻 تركيز ملفات الأسئلة التفاعلية:</span>
-            <ul>${data.q5_focus.map(f => `<li>${f}</li>`).join('') || '<li>لم يتم التحديد</li>'}</ul>
+            <ul>${getCheckedValues('q5_focus').map(f => `<li>${f}</li>`).join('') || '<li>لم يتم التحديد</li>'}</ul>
         </div>
-        ${data.customNotes ? `<div class="info-group"><span class="label">💬 ملاحظات إضافية:</span><p style="background:#0f172a; padding:10px; border-radius:8px;">${data.customNotes}</p></div>` : ''}
-        <div class="footer">تاريخ التصدير: ${data.timestamp || new Date().toLocaleString('ar-SA')}</div>
+        ${form.customNotes.value ? `<div class="info-group"><span class="label">💬 ملاحظات إضافية:</span><p style="background:#0f172a; border-radius:8px; padding:10px;">${form.customNotes.value}</p></div>` : ''}
+        <div class="footer">تاريخ التصدير: ${new Date().toLocaleString('ar-SA')}</div>
     </div>
 </body>
 </html>`;
@@ -724,14 +686,16 @@ ${data.customNotes ? data.customNotes : 'لا يوجد'}
             showToast('تم التنزيل! 💾', 'تم حفظ التقرير بصيغة HTML تفاعلية على جهازك.');
         }
 
+        // Reset Form Values
         function resetForm() {
-            if (confirm("هل أنت تأكد من رغبتك في مسح الإجابات المحفوظة؟")) {
+            if (confirm("هل أنت تأكد من رغبتك في مسح الاستبيان؟")) {
                 localStorage.removeItem(STORAGE_KEY);
                 document.getElementById('surveyForm').reset();
-                showToast('تم المسح', 'تمت إزالة الإجابات بنجاح.', 'fa-rotate-right', 'bg-slate-500/20 text-slate-300');
+                showToast('تم المسح', 'تمت إزالة الحقول بنجاح.', 'fa-rotate-right', 'bg-slate-500/20 text-slate-300');
             }
         }
 
+        // Initialize on page load
         window.onload = function() {
             loadSavedData();
         };
