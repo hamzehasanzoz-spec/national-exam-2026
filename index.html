@@ -547,8 +547,8 @@
 
             showToast('جاري الإرسال...', 'يتم رفع إجاباتك إلى قاعدة البيانات المركزية', 'fa-spinner fa-spin', 'bg-indigo-500/20 text-indigo-400');
 
-            const supabaseUrl = 'https://dltnazuhrgwsdqjhugqy.supabase.co/rest/v1/survey_responses'; //[cite: 6]
-            const supabaseKey = 'sb_publishable_h7c8upHxDwBPSEkBHO7ZcQ_prtMhnTf'; //[cite: 5]
+            const supabaseUrl = 'https://dltnazuhrgwsdqjhugqy.supabase.co/rest/v1/survey_responses';[cite: 6]
+            const supabaseKey = 'sb_publishable_h7c8upHxDwBPSEkBHO7ZcQ_prtMhnTf';[cite: 5]
 
             const payload = {
                 doctor_name: data.doctorName,
@@ -578,7 +578,7 @@
                 } else {
                     const errData = await response.json();
                     console.error('Supabase Error:', errData);
-                    showToast('خطأ في الإرسال', 'تعذر حفظ البيانات في قاعدة البيانات. تأكد من إنشاء جدول survey_responses.', 'fa-xmark', 'bg-rose-500/20 text-rose-400');
+                    showToast('خطأ في الإرسال', 'تعذر حفظ البيانات. تأكد من تعطيل RLS أو إنشاء جدول survey_responses بشكل صحيح.', 'fa-xmark', 'bg-rose-500/20 text-rose-400');
                 }
             } catch (err) {
                 console.error('Network Error:', err);
