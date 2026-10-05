@@ -148,7 +148,7 @@
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div class="space-y-2">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-300 text-xs sm:text-sm font-semibold">
-                        <i class="fa-solid fa-user-md"></i>
+                        <i class="fa-solid fa-stethoscope"></i>
                         <span>الدفعة 2026 • خريجو الطب البشري</span>
                     </div>
                     <h1 class="text-2xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-l from-white via-sky-100 to-sky-300">
@@ -417,7 +417,7 @@
         </form>
 
         <footer class="text-center py-4 text-xs text-slate-400">
-            <p>تم التصميم بكل حب لدعم أطباء المستقبل في الامتحان الوطني للطب البشري 2026 🩺❤️️</p>
+            <p>تم التصميم بكل حب لدعم أطباء المستقبل في الامتحان الوطني للطب البشري 2026 🩺❤</p>
         </footer>
 
     </div>
@@ -547,8 +547,8 @@
 
             showToast('جاري الإرسال...', 'يتم رفع إجاباتك إلى قاعدة البيانات المركزية', 'fa-spinner fa-spin', 'bg-indigo-500/20 text-indigo-400');
 
-            const supabaseUrl = 'https://dltnazuhrgwsdqjhugqy.supabase.co/rest/v1/survey_responses';[cite: 6]
-            const supabaseKey = 'sb_publishable_h7c8upHxDwBPSEkBHO7ZcQ_prtMhnTf';[cite: 5]
+            const supabaseUrl = 'https://dltnazuhrgwsdqjhugqy.supabase.co/rest/v1/survey_responses';
+            const supabaseKey = 'sb_publishable_h7c8upHxDwBPSEkBHO7ZcQ_prtMhnTf';
 
             const payload = {
                 doctor_name: data.doctorName,
@@ -678,7 +678,7 @@ ${data.customNotes ? data.customNotes : 'لا يوجد'}
         </div>
         <div class="info-group">
             <span class="label">🫀 الأقسام الأكثر صعوبة:</span>
-            <ul>${data.q3_blocks.map(b => `<li>${b}</li>`).join('') || '<li>لم يتم التحديد</li>'}</ul>
+            <ul>${data.q3_blocks.block?.length ? data.q3_blocks.map(b => `<li>${b}</li>`).join('') : (data.q3_blocks.map ? data.q3_blocks.map(b => `<li>${b}</li>`).join('') : '<li>لم يتم التحديد</li>')}</ul>
         </div>
         <div class="info-group">
             <span class="label">🔥 نمط التحفيز والمتابعة:</span>
@@ -688,7 +688,7 @@ ${data.customNotes ? data.customNotes : 'لا يوجد'}
             <span class="label">💻 تركيز ملفات الأسئلة التفاعلية:</span>
             <ul>${data.q5_focus.map(f => `<li>${f}</li>`).join('') || '<li>لم يتم التحديد</li>'}</ul>
         </div>
-        ${data.customNotes ? `<div class="info-group"><span class="label">💬 ملاحظات إضافية:</span><p style="background:#0f172a; p-3; border-radius:8px; padding:10px;">${data.customNotes}</p></div>` : ''}
+        ${data.customNotes ? `<div class="info-group"><span class="label">💬 ملاحظات إضافية:</span><p style="background:#0f172a; border-radius:8px; padding:10px;">${data.customNotes}</p></div>` : ''}
         <div class="footer">تاريخ التصدير: ${data.timestamp || new Date().toLocaleString('ar-SA')}</div>
     </div>
 </body>
